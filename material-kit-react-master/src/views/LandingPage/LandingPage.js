@@ -19,8 +19,13 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
 
+import { useAuth0 } from "@auth0/auth0-react"
+
+import NotLogin from "./Sections/NotLogin"
+
 
 export default function LandingPage(props) {
+  const { isAuthenticated } = useAuth0();
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   return (
@@ -50,7 +55,12 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
+          {isAuthenticated && (
+            <ProductSection />
+          )}
+          {!isAuthenticated && (
+            <NotLogin/>
+          )}
           <TeamSection />
         </div>
       </div>

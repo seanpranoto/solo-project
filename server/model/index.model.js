@@ -9,4 +9,4 @@ const ProfessorSchema = new mongoose.Schema({
 
 ProfessorSchema.plugin(uniqueValidator, { message: 'Error, expected Professor Name to be unique.' });
 
-module.exports = mongoose.model("Professors", ProfessorSchema);
+module.exports = mongoose.model("Profesors", ProfessorSchema);

@@ -20,7 +20,7 @@ import { Button } from "@material-ui/core";
 
 import styles from "assets/jss/material-kit-react/views/componentsSections/navbarsStyle";
 
-import { useAuth0 } from "@auth0/auth0-react"
+import { useAuth0 } from "@auth0/auth0-react";
 
 const useStyles = makeStyles(styles);
 
@@ -119,7 +119,7 @@ export default function HeaderLinks(props) {
                               color: "transparent"
                             }}
                             dropdownList={[
-                              `Name: ${user.given_name} ${user.family_name} `,
+                              `Name: ${user.name} `,
                               {divider:true},
                               `Nickname: ${user.nickname}`,
                               {divider:true},

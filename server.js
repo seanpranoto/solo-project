@@ -2,9 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const mongoose =require("mongoose")
-require("dotenv").config();
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
+mongoose.connect("mongodb://localhost/professor", {
     useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true
